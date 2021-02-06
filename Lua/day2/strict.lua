@@ -22,4 +22,4 @@ local mt = {
 }
 
 treasure = {}
-setmetatable(treasure, mt)
+setmetatable(treasure, mtfunct)
