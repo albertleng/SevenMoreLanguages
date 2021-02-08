@@ -20,7 +20,7 @@ Ref: [14 - The Environment](https://www.lua.org/pil/14.html)
 ### Do (Easy):
 - Write a function called concatenate(a1, a2) that takes two arrays and returns a new array with all the elements of a1 followed by all the elements of a2.  
 Ans: [day2_easy_concat.lua](day2_easy_concat.lua)  
-Verification in Lua Prompt:  
+#### Verification in Lua Prompt:  
 ```lua
 > dofile('day2_easy_concat.lua')
 > a = {1, 2, 3}
@@ -39,3 +39,21 @@ Verification in Lua Prompt:
 ```
 - Our strict table implementation in `Reading and Writing`, on page 19 doesn't provide a way to delete items from the table. If we try the usual approach, `treasure.gold = nil`, we get a duplicate key error. Modify `strict_write()` to allow deleting keys (by setting their values to `nil`).  
 Ans:
+Refer to line 13 of [strict.lua](strict.lua).  
+#### Verification in Lua Prompt:
+```lua
+> dofile('strict.lua')
+> treasure.gold = 50
+> =treasure.gold
+50
+>
+> treasure.gold = nil
+> =treasure.gold
+strict.lua:7: Invalid key: gold
+stack traceback:
+        [C]: in function 'error'
+        strict.lua:7: in function '__index'
+        stdin:1: in main chunk
+        [C]: in ?
+>
+```
