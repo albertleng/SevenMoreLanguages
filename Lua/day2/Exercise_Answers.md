@@ -5,8 +5,51 @@
 Ans/Notes:  
 Ref: [LuaRocks](https://luarocks.org/)  
 `LuaRocks` is the package manager for Lua modules.  
-It allows you to create and install Lua modules as self-contained packages called `rocks`. You can download and install LuaRocks on Unix and Windows. [Get Started](https://luarocks.org/#quick-start)
-Current status: Facing problem in installation. Asked in [luarocks/luarocks](https://github.com/luarocks/luarocks/issues/1278) and [Stackoverflow](https://stackoverflow.com/questions/66095535/luarocks-installation-in-win-10-does-nothing)
+It allows you to create and install Lua modules as self-contained packages called `rocks`. You can download and install LuaRocks on Unix and Windows. [Get Started](https://luarocks.org/#quick-start)  
+Current status: Facing problem in installation. Asked in [luarocks/luarocks](https://github.com/luarocks/luarocks/issues/1278) and [Stackoverflow](https://stackoverflow.com/questions/66095535/luarocks-installation-in-win-10-does-nothing)  
+Answered in <https://stackoverflow.com/a/66097449/6611532>  
+
+Running `luarocks` gives me the following error/warning:  
+```bash
+PS C:\Users\CMS\SevenMoreLanguages> luarocks
+Warning: Lua 5.3 interpreter not found at C:\Program Files\LUA
+
+Modules may not install with the correct configurations. You may want to configure the path prefix to your build of Lua 5.3 using
+
+   luarocks config --local lua_dir <your-lua-prefix>
+...
+Configuration:
+   Lua:
+      Version    : 5.3
+      Interpreter: C:\Program Files\LUA/luarocks.exe (ok)
+      LUA_DIR    : C:\Program Files\LUA (ok)
+      LUA_BINDIR : C:\Program Files\LUA (ok)
+      LUA_INCDIR :  (not found)
+                   ****************************************
+                   Use the command
+
+                      luarocks config variables.LUA_INCDIR <dir>
+
+                   to fix the location
+                   ****************************************
+      LUA_LIBDIR :  (not found)
+                   ****************************************
+                   Use the command
+
+                      luarocks config variables.LUA_LIBDIR <dir>
+
+                   to fix the location
+                   ****************************************
+
+   Configuration files:
+      System  : C:/Program Files/luarocks/config-5.3.lua (not found)
+      User    : C:/Users/CMS/AppData/Roaming/luarocks/config-5.3.lua (not found)
+
+   Rocks trees in use:
+      C:\Users\CMS\AppData\Roaming/luarocks ("user")
+```
+TODO: To refer to [](https://stackoverflow.com/a/54700412/6611532) and resolve.
+
 - The open source LOOP Library that implements a more sophisticated scheduler than the one we've written here.
     Ref: <https://git.tecgraf.puc-rio.br/engdist/loop/-/blob/06dd23c4e5099586e189959aa474344f534d8f39/lua/loop/thread/Scheduler.lua>
 - The list of all metatable functions that Lua recognizes (in addition to the __tostring, __index and __newindex functions we used)  
